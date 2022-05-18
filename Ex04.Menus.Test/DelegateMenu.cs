@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
@@ -25,10 +22,10 @@ namespace Ex04.Menus.Test
             showDateTimeMenu.Add(showTime);
             versionsAndSpacesMenu.Add(showVersion);
             versionsAndSpacesMenu.Add(countSpaces);
-            showDate.Chosen += showDate_Chosen;
-            showTime.Chosen += showTime_Chosen;
-            showVersion.Chosen += showVersion_Chosen;
-            countSpaces.Chosen += countSpaces_Chosen;
+            showDate.Active += showDate_Chosen;
+            showTime.Active += showTime_Chosen;
+            showVersion.Active += showVersion_Chosen;
+            countSpaces.Active += countSpaces_Chosen;
 
             try
             {

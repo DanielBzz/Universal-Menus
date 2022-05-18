@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
     public class MainMenu : MenuItem
     {
-        private int m_Level = 1;
         private readonly Dictionary<int, MenuItem> r_MenuItems = new Dictionary<int, MenuItem>();
+        private int m_Level = 1;
 
         public MainMenu(string i_Name) : base(i_Name)
         {
@@ -17,13 +16,21 @@ namespace Ex04.Menus.Delegates
 
         public int Level
         {
-            get { return m_Level; }
-            set { m_Level = value; }
+            get
+            {
+                return m_Level;
+            }
+
+            set
+            {
+                m_Level = value;
+            }
         }
 
         public void Add(MenuItem i_MenuItem)
         {
             MainMenu newMenuToAdd = i_MenuItem as MainMenu;
+
             if (newMenuToAdd != null)
             {
                 newMenuToAdd.Level = m_Level + 1;
@@ -46,14 +53,14 @@ namespace Ex04.Menus.Delegates
             }
         }
 
-        private void handleUserChoice(ref bool isActiveMenu)
+        private void handleUserChoice(ref bool io_IsActiveMenu)
         {
             int userChoise;
             getUserSelection(out userChoise, 0, r_MenuItems.Count - 1);
 
             if (userChoise == 0)
             {
-                isActiveMenu = false;
+                io_IsActiveMenu = false;
             }
             else if (r_MenuItems[userChoise] is MainMenu)
             {
@@ -61,7 +68,17 @@ namespace Ex04.Menus.Delegates
             }
             else if (r_MenuItems[userChoise] is FinalItem)
             {
-                (r_MenuItems[userChoise] as FinalItem).ActivateFinalItem();
+                try
+                {
+                    (r_MenuItems[userChoise] as FinalItem).ActivateFinalItem();
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Console.Clear();
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("press any key to go back to the last menu..");
+                    Console.ReadLine();
+                }
             }
             else
             {
@@ -72,14 +89,15 @@ namespace Ex04.Menus.Delegates
         private void printTitle()
         {
             string title = string.Format(@"({0}) {1}", m_Level, Name);
+
             Console.WriteLine(title);
             for (int i = 0; i < title.Length; i++)
             {
                 Console.Write("_");
             }
 
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         private void printMenu()

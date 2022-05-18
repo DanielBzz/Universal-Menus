@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public delegate void ItemChosenDelegate();
+    public delegate void ActivateItemDelegate();
 
     public class FinalItem : MenuItem
     {
-
-        public event ItemChosenDelegate Chosen;
+        public event ActivateItemDelegate Active;
 
         public FinalItem(string i_Name) : base(i_Name)
         {
@@ -18,20 +17,19 @@ namespace Ex04.Menus.Delegates
 
         public void ActivateFinalItem()
         {
-            OnChosen();
+            OnActive();
         }
 
-        protected virtual void OnChosen()
+        protected virtual void OnActive()
         {
-            if (Chosen != null)
+            if (Active != null)
             {
-                Chosen.Invoke();
+                Active.Invoke();
             }
             else
             {
                 throw new ArgumentNullException("No Method to invoke");
             }
         }
-
     }
 }

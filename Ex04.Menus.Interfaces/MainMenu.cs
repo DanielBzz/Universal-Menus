@@ -6,28 +6,31 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu : MenuItem
     {
-        private int m_Level = 1;
         private readonly Dictionary<int, MenuItem> r_MenuItems = new Dictionary<int, MenuItem>();
-
-        public int Level
-        {
-            get { return m_Level; }
-            set { m_Level = value; }
-        }
-
-        public Dictionary<int, MenuItem> MenuItems
-        {
-            get { return r_MenuItems; }
-        }
+        private int m_Level = 1;
 
         public MainMenu(string i_Name) : base(i_Name)
         {
             Add(new MenuItem("Quit"));
         }
 
+        public int Level
+        {
+            get
+            {
+                return m_Level;
+            }
+
+            set
+            {
+                m_Level = value;
+            }
+        }
+
         public void Add(MenuItem i_MenuItem)
         {
             MainMenu newMenuToAdd = i_MenuItem as MainMenu;
+
             if (newMenuToAdd != null)
             {
                 newMenuToAdd.Level = m_Level + 1;
@@ -50,14 +53,14 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        private void handleUserChoice(ref bool isActiveMenu)
+        private void handleUserChoice(ref bool io_IsActiveMenu)
         {
             int userChoise;
             getUserSelection(out userChoise, 0, r_MenuItems.Count - 1);
 
             if (userChoise == 0)
             {
-                isActiveMenu = false;
+                io_IsActiveMenu = false;
             }
             else if (r_MenuItems[userChoise] is MainMenu)
             {
@@ -82,8 +85,8 @@ namespace Ex04.Menus.Interfaces
                 Console.Write("_");
             }
 
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         private void printMenu()
