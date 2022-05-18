@@ -3,21 +3,21 @@ using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
-    public class InterfaceMenu
+    internal class InterfaceMenu
     {
-        private Menu m_MainMenu = new Menu("Interface Menu");
+        private readonly MainMenu r_MainMenu = new MainMenu("Interface MainMenu");
 
         public void Show()
         {
-            Menu versionsAndSpacesMenu = new Menu("Versions And Spaces");
-            Menu showDateTimeMenu = new Menu("Show Date or Time");
-            ShowDate showDate = new ShowDate("Show Time");
-            ShowTime showTime = new ShowTime("Show Date");
-            ShowVersion showVersion = new ShowVersion("Show Version");
-            CountSpaces countSpaces = new CountSpaces("Count Spaces");
+            MainMenu versionsAndSpacesMenu = new MainMenu("Versions And Spaces");
+            MainMenu showDateTimeMenu = new MainMenu("Show Date or Time");
+            ShowDate showDate = new ShowDate();
+            ShowTime showTime = new ShowTime();
+            ShowVersion showVersion = new ShowVersion();
+            CountSpaces countSpaces = new CountSpaces();
 
-            m_MainMenu.Add(showDateTimeMenu);
-            m_MainMenu.Add(versionsAndSpacesMenu);
+            r_MainMenu.Add(showDateTimeMenu);
+            r_MainMenu.Add(versionsAndSpacesMenu);
             showDateTimeMenu.Add(showDate);
             showDateTimeMenu.Add(showTime);
             versionsAndSpacesMenu.Add(showVersion);
@@ -25,7 +25,7 @@ namespace Ex04.Menus.Test
 
             try
             {
-                m_MainMenu.Show();
+                r_MainMenu.Show();
             }
             catch (Exception ex)
             {

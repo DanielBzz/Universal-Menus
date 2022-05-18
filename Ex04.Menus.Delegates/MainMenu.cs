@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Delegates
 {
-    public class Menu : MenuItem
+    public class MainMenu : MenuItem
     {
         private int m_Level = 1;
         private readonly Dictionary<int, MenuItem> r_MenuItems = new Dictionary<int, MenuItem>();
+
+        public MainMenu(string i_Name) : base(i_Name)
+        {
+            Add(new MenuItem("Quit"));
+        }
 
         public int Level
         {
@@ -15,19 +21,9 @@ namespace Ex04.Menus.Interfaces
             set { m_Level = value; }
         }
 
-        public Dictionary<int, MenuItem> MenuItems
-        {
-            get { return r_MenuItems; }
-        }
-
-        public Menu(string i_Name) : base(i_Name)
-        {
-            Add(new MenuItem("Quit"));
-        }
-
         public void Add(MenuItem i_MenuItem)
         {
-            Menu newMenuToAdd = i_MenuItem as Menu;
+            MainMenu newMenuToAdd = i_MenuItem as MainMenu;
             if (newMenuToAdd != null)
             {
                 newMenuToAdd.Level = m_Level + 1;
@@ -59,13 +55,13 @@ namespace Ex04.Menus.Interfaces
             {
                 isActiveMenu = false;
             }
-            else if (r_MenuItems[userChoise] is Menu)
+            else if (r_MenuItems[userChoise] is MainMenu)
             {
-                (r_MenuItems[userChoise] as Menu).Show();
+                (r_MenuItems[userChoise] as MainMenu).Show();
             }
-            else if (r_MenuItems[userChoise] is IExecutable)
+            else if (r_MenuItems[userChoise] is FinalItem)
             {
-                (r_MenuItems[userChoise] as IExecutable).Execute();
+                (r_MenuItems[userChoise] as FinalItem).ActivateFinalItem();
             }
             else
             {
