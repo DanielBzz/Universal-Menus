@@ -6,12 +6,15 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu : MenuItem
     {
+        private const string k_QuitMenuItemName = "Quit";
+        private const string k_BackMenuItemName = "Back";
+        private const int k_BackOrQuitOption = 0;
         private readonly Dictionary<int, MenuItem> r_MenuItems = new Dictionary<int, MenuItem>();
         private int m_Level = 1;
 
         public MainMenu(string i_Name) : base(i_Name)
         {
-            Add(new MenuItem("Quit"));
+            Add(new MenuItem(k_QuitMenuItemName));
         }
 
         public int Level
@@ -34,7 +37,7 @@ namespace Ex04.Menus.Interfaces
             if (newMenuToAdd != null)
             {
                 newMenuToAdd.Level = m_Level + 1;
-                newMenuToAdd.r_MenuItems[0].Name = "Back";
+                newMenuToAdd.r_MenuItems[0].Name = k_BackMenuItemName;
             }
 
             r_MenuItems.Add(r_MenuItems.Count, i_MenuItem);
@@ -56,9 +59,9 @@ namespace Ex04.Menus.Interfaces
         private void handleUserChoice(ref bool io_IsActiveMenu)
         {
             int userChoise;
-            getUserSelection(out userChoise, 0, r_MenuItems.Count - 1);
+            getUserSelection(out userChoise, k_BackOrQuitOption, r_MenuItems.Count - 1);
 
-            if (userChoise == 0)
+            if (userChoise == k_BackOrQuitOption)
             {
                 io_IsActiveMenu = false;
             }

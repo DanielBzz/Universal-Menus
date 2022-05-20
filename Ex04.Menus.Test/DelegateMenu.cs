@@ -11,8 +11,8 @@ namespace Ex04.Menus.Test
         {
             MainMenu versionsAndSpacesMenu = new MainMenu("Versions And Spaces");
             MainMenu showDateTimeMenu = new MainMenu("Show Date or Time");
-            MethodItem showDate = new MethodItem("Show Time");
-            MethodItem showTime = new MethodItem("Show Date");
+            MethodItem showDate = new MethodItem("Show Date");
+            MethodItem showTime = new MethodItem("Show Time");
             MethodItem showVersion = new MethodItem("Show Version");
             MethodItem countSpaces = new MethodItem("Count Spaces");
 

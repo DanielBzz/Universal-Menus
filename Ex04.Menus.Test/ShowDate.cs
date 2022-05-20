@@ -5,7 +5,11 @@ namespace Ex04.Menus.Test
 {
     public class ShowDate : MenuItem, IExecutable
     {
-        public ShowDate() : base("Show Date") { }
+        private const string k_MenuItemName = "Show Date";
+
+        public ShowDate() : base(k_MenuItemName)
+        {
+        }
 
         public void Execute()
         {

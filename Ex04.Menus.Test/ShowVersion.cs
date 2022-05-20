@@ -5,7 +5,11 @@ namespace Ex04.Menus.Test
 {
     public class ShowVersion : MenuItem, IExecutable
     {
-        public ShowVersion() : base("Show Version") { }
+        private const string k_MenuItemName = "Show Version";
+
+        public ShowVersion() : base(k_MenuItemName)
+        {
+        }
 
         public void Execute()
         {

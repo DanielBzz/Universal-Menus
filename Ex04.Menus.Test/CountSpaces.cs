@@ -4,7 +4,11 @@ namespace Ex04.Menus.Test
 {
     public class CountSpaces : MenuItem, IExecutable
     {
-        public CountSpaces() : base("Count Spaces") { }
+        private const string k_MenuItemName = "Count Spaces";
+
+        public CountSpaces() : base(k_MenuItemName)
+        {
+        }
 
         public void Execute()
         {
