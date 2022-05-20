@@ -5,9 +5,7 @@ namespace Ex04.Menus.Test
 {
     public class ShowVersion : MenuItem, IExecutable
     {
-        public ShowVersion() : base("Show Version")
-        {
-        }
+        public ShowVersion() : base("Show Version") { }
 
         public void Execute()
         {

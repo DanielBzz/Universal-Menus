@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Ex04.Menus.Delegates
+﻿namespace Ex04.Menus.Delegates
 {
     public class MenuItem
     {
-        protected string m_Name;
+        private string m_Name;
 
         public MenuItem(string i_Name)
         {

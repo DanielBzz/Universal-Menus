@@ -2,7 +2,7 @@
 {
     public class MenuItem
     {
-        protected string m_Name;
+        private string m_Name;
 
         public MenuItem(string i_Name)
         {

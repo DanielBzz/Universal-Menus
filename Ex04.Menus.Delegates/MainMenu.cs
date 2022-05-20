@@ -66,11 +66,11 @@ namespace Ex04.Menus.Delegates
             {
                 (r_MenuItems[userChoise] as MainMenu).Show();
             }
-            else if (r_MenuItems[userChoise] is FinalItem)
+            else if (r_MenuItems[userChoise] is MethodItem)
             {
                 try
                 {
-                    (r_MenuItems[userChoise] as FinalItem).ActivateFinalItem();
+                    (r_MenuItems[userChoise] as MethodItem).ActivateMethodItem();
                 }
                 catch (ArgumentNullException ex)
                 {

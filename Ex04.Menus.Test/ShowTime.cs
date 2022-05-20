@@ -5,9 +5,7 @@ namespace Ex04.Menus.Test
 {
     public class ShowTime : MenuItem, IExecutable
     {
-        public ShowTime() : base("Show Time")
-        {
-        }
+        public ShowTime() : base("Show Time") { }
 
         public void Execute()
         {
