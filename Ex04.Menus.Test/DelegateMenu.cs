@@ -22,10 +22,10 @@ namespace Ex04.Menus.Test
             showDateTimeMenu.Add(showTime);
             versionsAndSpacesMenu.Add(showVersion);
             versionsAndSpacesMenu.Add(countSpaces);
-            showDate.Active += showDate_Chosen;
-            showTime.Active += showTime_Chosen;
-            showVersion.Active += showVersion_Chosen;
-            countSpaces.Active += countSpaces_Chosen;
+            showDate.Active += showDate_Active;
+            showTime.Active += showTime_Active;
+            showVersion.Active += showVersion_Active;
+            countSpaces.Active += countSpaces_Active;
 
             try
             {
@@ -37,25 +37,25 @@ namespace Ex04.Menus.Test
             }
         }
 
-        private void showDate_Chosen()
+        private void showDate_Active()
         {
             ShowDate date = new ShowDate();
             date.Execute();
         }
 
-        private void showTime_Chosen()
+        private void showTime_Active()
         {
             ShowTime time = new ShowTime();
             time.Execute();
         }
 
-        private void showVersion_Chosen()
+        private void showVersion_Active()
         {
             ShowVersion version = new ShowVersion();
             version.Execute();
         }
 
-        private void countSpaces_Chosen()
+        private void countSpaces_Active()
         {
             CountSpaces counter = new CountSpaces();
             counter.Execute();
