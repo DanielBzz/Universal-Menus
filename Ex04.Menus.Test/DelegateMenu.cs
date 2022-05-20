@@ -11,10 +11,10 @@ namespace Ex04.Menus.Test
         {
             MainMenu versionsAndSpacesMenu = new MainMenu("Versions And Spaces");
             MainMenu showDateTimeMenu = new MainMenu("Show Date or Time");
-            FinalItem showDate = new FinalItem("Show Time");
-            FinalItem showTime = new FinalItem("Show Date");
-            FinalItem showVersion = new FinalItem("Show Version");
-            FinalItem countSpaces = new FinalItem("Count Spaces");
+            MethodItem showDate = new MethodItem("Show Time");
+            MethodItem showTime = new MethodItem("Show Date");
+            MethodItem showVersion = new MethodItem("Show Version");
+            MethodItem countSpaces = new MethodItem("Count Spaces");
 
             r_MainMenu.Add(showDateTimeMenu);
             r_MainMenu.Add(versionsAndSpacesMenu);
@@ -39,26 +39,26 @@ namespace Ex04.Menus.Test
 
         private void showDate_Active()
         {
-            ShowDate date = new ShowDate();
-            date.Execute();
+            Methods methods = new Methods();
+            methods.ShowDate();
         }
 
         private void showTime_Active()
         {
-            ShowTime time = new ShowTime();
-            time.Execute();
+            Methods methods = new Methods();
+            methods.ShowTime();
         }
 
         private void showVersion_Active()
         {
-            ShowVersion version = new ShowVersion();
-            version.Execute();
+            Methods methods = new Methods();
+            methods.ShowVersion();
         }
 
         private void countSpaces_Active()
         {
-            CountSpaces counter = new CountSpaces();
-            counter.Execute();
+            Methods methods = new Methods();
+            methods.CountSpaces();
         }
     }
 }
