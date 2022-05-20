@@ -12,8 +12,7 @@ namespace Ex04.Menus.Test
 
         public void Execute()
         {
-            Methods methods = new Methods();
-            methods.CountSpaces();
+            Methods.CountSpaces();
         }
     }
 }

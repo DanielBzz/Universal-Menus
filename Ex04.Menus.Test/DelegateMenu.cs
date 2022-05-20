@@ -39,26 +39,22 @@ namespace Ex04.Menus.Test
 
         private void showDate_Active()
         {
-            Methods methods = new Methods();
-            methods.ShowDate();
+            Methods.ShowDate();
         }
 
         private void showTime_Active()
         {
-            Methods methods = new Methods();
-            methods.ShowTime();
+            Methods.ShowTime();
         }
 
         private void showVersion_Active()
         {
-            Methods methods = new Methods();
-            methods.ShowVersion();
+            Methods.ShowVersion();
         }
 
         private void countSpaces_Active()
         {
-            Methods methods = new Methods();
-            methods.CountSpaces();
+            Methods.CountSpaces();
         }
     }
 }

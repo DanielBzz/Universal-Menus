@@ -13,8 +13,7 @@ namespace Ex04.Menus.Test
 
         public void Execute()
         {
-            Methods methods = new Methods();
-            methods.ShowVersion();
+            Methods.ShowVersion();
         }
     }
 }

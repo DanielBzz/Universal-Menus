@@ -2,23 +2,23 @@
 
 namespace Ex04.Menus.Test
 {
-    public class Methods
+    public static class Methods
     {
-        public void ShowDate()
+        public static void ShowDate()
         {
             System.Console.Clear();
             Console.WriteLine(DateTime.Now.ToShortDateString());
             handleEndOfMethod();
         }
 
-        public void ShowTime()
+        public static void ShowTime()
         {
             System.Console.Clear();
             Console.WriteLine(DateTime.Now.ToShortTimeString());
             handleEndOfMethod();
         }
 
-        public void CountSpaces()
+        public static void CountSpaces()
         {
             Console.Clear();
             Console.WriteLine("Please enter a string");
@@ -37,14 +37,14 @@ namespace Ex04.Menus.Test
             handleEndOfMethod();
         }
 
-        public void ShowVersion()
+        public static void ShowVersion()
         {
             System.Console.Clear();
             Console.WriteLine("Version: 22.2.4.8950");
             handleEndOfMethod();
         }
 
-        private void handleEndOfMethod()
+        private static void handleEndOfMethod()
         {
             Console.WriteLine("Press any key to go back ...");
             Console.ReadLine();
