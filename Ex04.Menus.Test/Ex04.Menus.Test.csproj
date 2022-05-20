@@ -51,6 +51,7 @@
     <Compile Include="CountSpaces.cs" />
     <Compile Include="DelegateMenu.cs" />
     <Compile Include="InterfaceMenu.cs" />
+    <Compile Include="Methods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ShowDate.cs" />
     <Compile Include="ShowTime.cs" />
