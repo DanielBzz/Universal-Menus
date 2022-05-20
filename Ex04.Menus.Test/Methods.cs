@@ -46,7 +46,7 @@ namespace Ex04.Menus.Test
 
         private static void handleEndOfMethod()
         {
-            Console.WriteLine("Press any key to go back ...");
+            Console.WriteLine("Press enter to go back ...");
             Console.ReadLine();
         }
     }
